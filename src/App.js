@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import LoginForm from './components/Login/LoginForm';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import NotFound from '../NotFound/NotFound'; 
 
 function App() {
+  const isAlreadyAuthenticated = this.isAuthenticated();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Routes>            
+          <Route path="/" element={isAlreadyAuthenticated ? <LoginForm /> : <NotFound />} />
+         {/*  <Route path="/test" element={<Test />} />
+          <Route path="*" element={<Navigate to="/" replace />}/> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

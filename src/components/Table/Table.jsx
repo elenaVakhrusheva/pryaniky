@@ -1,17 +1,17 @@
 import React from "react";
 
-const logout = e => {
+/* const logout = e => {
   e.preventDefault();
   localStorage.removeItem('shop-user');
-  setToken(false);
-}
+ // setToken(false);
+} */
 
-export default ({ table }) => {
+export default function Table()  {
   return <>
   <div className="wrapper">
     <a href="" onClick={e=> {e.preventDefault();}}>Выйти</a>
 
-    <div>
+    {/* <div>
       {data.map((d, i) => <Table
         key={id}
         companySigDate={d.companyDate}
@@ -22,7 +22,7 @@ export default ({ table }) => {
         employeeNumber={d.empNumer}
         employeeSigDate={d.empDate}
         employeeSignatureName={d.empName} />)}
-    </div>
+    </div> */}
   </div>
   </>
 }
